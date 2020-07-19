@@ -13,6 +13,7 @@
 		095BB78A24C440F1000A3DAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 095BB78824C440F1000A3DAE /* Main.storyboard */; };
 		095BB78C24C440F3000A3DAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 095BB78B24C440F3000A3DAE /* Assets.xcassets */; };
 		095BB78F24C440F3000A3DAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 095BB78D24C440F3000A3DAE /* LaunchScreen.storyboard */; };
+		095BB79724C48E1F000A3DAE /* Waifu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 095BB79624C48E1F000A3DAE /* Waifu.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		095BB78B24C440F3000A3DAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		095BB78E24C440F3000A3DAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		095BB79024C440F3000A3DAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		095BB79624C48E1F000A3DAE /* Waifu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Waifu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				095BB78B24C440F3000A3DAE /* Assets.xcassets */,
 				095BB78D24C440F3000A3DAE /* LaunchScreen.storyboard */,
 				095BB79024C440F3000A3DAE /* Info.plist */,
+				095BB79624C48E1F000A3DAE /* Waifu.swift */,
 			);
 			path = "Random Waifu";
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			files = (
 				095BB78724C440F1000A3DAE /* ViewController.swift in Sources */,
 				095BB78324C440F1000A3DAE /* AppDelegate.swift in Sources */,
+				095BB79724C48E1F000A3DAE /* Waifu.swift in Sources */,
 				095BB78524C440F1000A3DAE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,6 +291,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2XCFZTWC4T;
 				INFOPLIST_FILE = "Random Waifu/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -305,6 +310,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2XCFZTWC4T;
 				INFOPLIST_FILE = "Random Waifu/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
