@@ -27,8 +27,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        let fileUrl = URL(string: "https://cdn.discordapp.com/emojis/679588119598596096.png")!
+        explicitToggle.isOn = false
+        let fileUrl = URL(string: "https://cdn.discordapp.com/avatars/405667245415727104/278961f682ba296ad99c494562e86114.png?size=512")!
         waifuView.load(url: fileUrl)
         waifuInput.text = "cirno"
     }
@@ -65,15 +65,26 @@ class ViewController: UIViewController {
             self.present(alert, animated: true)
         }
         else{
-            let waifu = generateWaifu(waifu: waifuInput.text!, rating: "s")
-        
-            let fileUrl = URL(string: waifu)!
-            waifuView.load(url: fileUrl)
+            if (explicitToggle.isOn){
+                let waifu = generateWaifu(waifu: waifuInput.text!, rating: "explicit")
+                
+                    let fileUrl = URL(string: waifu)!
+                    waifuView.load(url: fileUrl)
+            }
+            else{
+                let waifu = generateWaifu(waifu: waifuInput.text!, rating: "safe")
+                
+                    let fileUrl = URL(string: waifu)!
+                    waifuView.load(url: fileUrl)
+            }
+            
 
         }
     }
     
     @IBOutlet weak var waifuInput: UITextField!
     @IBOutlet weak var waifuView: UIImageView!
+    
+    @IBOutlet weak var explicitToggle: UISwitch!
 }
 
