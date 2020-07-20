@@ -36,46 +36,61 @@ class ViewController: UIViewController {
     {
         
         let url = "https://danbooru.donmai.us/posts.json?random=true&tags=\(waifu)&rating=\(rating)&limit=1"
-        //let decoder = JSONDecoder()
-        var res = ""
-        
-    if let url = URL(string: url) {
-            if let data = try? Data(contentsOf: url) {
-                //let decoder = JSONDecoder()
-                print(data)
-                let img: [Image] = try! JSONDecoder().decode([Image].self, from: data)
-                res = String(img.first?.url ?? "String")
-
-                
+            //let decoder = JSONDecoder()
+            var res = ""
+            
+        if let url = URL(string: url) {
+                if let data = try? Data(contentsOf: url) {
+                    let img: [Image] = try! JSONDecoder().decode([Image].self, from: data)
+                    res = String(img.first?.url ?? "String")
             }
         }
-        return res
+            return res
     }
-    
         
     @IBOutlet weak var waifuLink: UILabel!
     
     @IBAction func WaifuButton(_ sender: Any) {
+        var explicit = false
+        var rat:String = String()
+        var waifu:String = String()
+        
         if waifuInput.text == nil || waifuInput.text == ""
         {
-            let alert = UIAlertController(title: "Empty", message: "The text field can't be empty", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Empty", message: "The text field can't be empty", preferredStyle: .actionSheet)
 
-            alert.addAction(UIAlertAction(title: "Ok, sorry.", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Okay", style: .destructive, handler: nil))
             
             self.present(alert, animated: true)
         }
-        else{
+        else
+        {
             if (explicitToggle.isOn){
-                let waifu = generateWaifu(waifu: waifuInput.text!, rating: "explicit")
-                
-                    let fileUrl = URL(string: waifu)!
+                explicit = true
+                rat = "explicit"
+                waifu = generateWaifu(waifu: waifuInput.text!, rating: rat)
+                if waifu != "" {
+                    let fileUrl:URL = URL(string: waifu)!
                     waifuView.load(url: fileUrl)
+                }
+                let fileUrl =  URL(string: "https://cdn.discordapp.com/avatars/405667245415727104/278961f682ba296ad99c494562e86114.png?size=512")!
+                waifuView.load(url: fileUrl)
+                
             }
             else{
-                let waifu = generateWaifu(waifu: waifuInput.text!, rating: "safe")
-                
-                    let fileUrl = URL(string: waifu)!
+                explicit = false
+                rat = "safe"
+                waifu = generateWaifu(waifu: waifuInput.text!, rating: rat)
+                if waifu != "" {
+                    let fileUrl:URL = URL(string: waifu)!
                     waifuView.load(url: fileUrl)
+                }
+                else{
+                    let fileUrl =  URL(string: "https://cdn.discordapp.com/avatars/405667245415727104/278961f682ba296ad99c494562e86114.png?size=512")!
+                    waifuView.load(url: fileUrl)
+                    
+                }
+                
             }
             
 

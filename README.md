@@ -2,7 +2,6 @@
 An iOS application to see random pictures of your Waifu.
 
 # Known bugs
-- it crashes a lot lol
 - not responsive
 
 # Screenshots
