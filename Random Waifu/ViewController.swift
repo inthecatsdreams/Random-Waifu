@@ -51,7 +51,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var waifuLink: UILabel!
     
     @IBAction func WaifuButton(_ sender: Any) {
-        var explicit = false
         var rat:String = String()
         var waifu:String = String()
         
@@ -66,7 +65,6 @@ class ViewController: UIViewController {
         else
         {
             if (explicitToggle.isOn){
-                explicit = true
                 rat = "explicit"
                 waifu = generateWaifu(waifu: waifuInput.text!, rating: rat)
                 if waifu != "" {
@@ -78,7 +76,6 @@ class ViewController: UIViewController {
                 
             }
             else{
-                explicit = false
                 rat = "safe"
                 waifu = generateWaifu(waifu: waifuInput.text!, rating: rat)
                 if waifu != "" {
