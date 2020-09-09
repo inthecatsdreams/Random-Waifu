@@ -42,7 +42,7 @@ class ViewController: UIViewController {
         if let url = URL(string: url) {
                 if let data = try? Data(contentsOf: url) {
                     let img: [Image] = try! JSONDecoder().decode([Image].self, from: data)
-                    res = String(img.first?.url ?? "String")
+                    res = String(img.first?.url ?? "https://cdn.discordapp.com/avatars/405667245415727104/278961f682ba296ad99c494562e86114.png?size=512")
             }
         }
             return res
@@ -71,8 +71,6 @@ class ViewController: UIViewController {
                     let fileUrl:URL = URL(string: waifu)!
                     waifuView.load(url: fileUrl)
                 }
-                let fileUrl =  URL(string: "https://cdn.discordapp.com/avatars/405667245415727104/278961f682ba296ad99c494562e86114.png?size=512")!
-                waifuView.load(url: fileUrl)
                 
             }
             else{
@@ -82,11 +80,7 @@ class ViewController: UIViewController {
                     let fileUrl:URL = URL(string: waifu)!
                     waifuView.load(url: fileUrl)
                 }
-                else{
-                    let fileUrl =  URL(string: "https://cdn.discordapp.com/avatars/405667245415727104/278961f682ba296ad99c494562e86114.png?size=512")!
-                    waifuView.load(url: fileUrl)
-                    
-                }
+                
                 
             }
             
